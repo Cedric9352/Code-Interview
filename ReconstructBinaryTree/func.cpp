@@ -8,8 +8,9 @@ TreeNode reconstruct_bt(int *preorder, int *inorder, int length)
     }
     return core(preorder, preorder+length-1, inorder, inorder+length-1);
 }
-
-
+/**
+ * hint: find root's index in in-order, do it recursively
+ */
 TreeNode core(int *pre_start, int *pre_end, int *in_start, int *in_end)
 {
     int root_value = pre_start[0];
