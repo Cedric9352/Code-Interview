@@ -10,5 +10,6 @@ int main()
     pHead2->next = new ListNode(4);
     ListNode* res = merge(pHead1, pHead2);
     cout << res << endl;
+    delete res;
     return 0;
 }
