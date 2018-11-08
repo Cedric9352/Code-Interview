@@ -2,6 +2,9 @@
 #define HEADER_H
 #include <iostream>
 
+/**
+ * class ListNode
+ */
 class ListNode
 {
 public:
@@ -11,8 +14,11 @@ public:
     ListNode *next;
 };
 /**
- * public method for ListNode
+ * output operator of ListNode
  */
 std::ostream& operator<<(std::ostream&, ListNode*);
+/**
+ * public method for ListNode
+ */
 ListNode* merge(ListNode*, ListNode*);
 #endif // HEADER_H
