@@ -1,5 +1,18 @@
 #include "header.h"
 
+/**
+ * destructor of ListNode
+ */
+ListNode::~ListNode()
+{
+    ListNode *ptr = this->next;
+    this->next = nullptr;
+    while(ptr != nullptr) {
+        ListNode *tmp = ptr->next;
+        delete ptr;
+        ptr = tmp;
+    }
+}
 ListNode* meeting_node(ListNode *pHead)
 {
     if(pHead == nullptr) {
@@ -22,10 +35,10 @@ ListNode* meeting_node(ListNode *pHead)
     return nullptr;
 }
 /**
- * if n is total counts of nodes, m is nodes in loop, if first pointer move m steps,
+ * hint: if n is total counts of nodes, m is nodes in loop, if first pointer move m steps,
  * then rest nodes is n-m-1, add meeting node, then n-m move to meeting node
  */
-List* entry_node_of_loop(ListNode *pHead)
+ListNode* entry_node_of_loop(ListNode *pHead)
 {
     ListNode *meetingNode = meeting_node(pHead);
     if(meetingNode == nullptr) {
